@@ -14,13 +14,7 @@ public class WorldSimulation
     private short _autoplaySpeed { get; set; }
 
     // WORLD SIMULATION RULES
-    private short _maxAnimalAge { get; set; } // L
-    private short _maxAnimalRange { get; set; } // M
-    private short _newPlantReq { get; set; } // R
-    private short _newAnimalReq { get; set; } // B
-    private bool _isPlantReq { get; set; } // P
-    private short _plantSurviveReq { get; set; } // W
-    private short _animalSurviveReq { get; set; } // Z
+    private SimulationRules _simulationRules { get; set; }
 
     WorldSimulation()
     {
