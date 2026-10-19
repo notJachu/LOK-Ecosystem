@@ -149,7 +149,9 @@ public class WorldSimulation
 
         _cellsToEvaluate.Clear();
         nextWorld.Clear();
-
+        _plantCount = 0;
+        _animalCount = 0;
+        
         foreach (var point in currentWorld.Keys)
         {
             _cellsToEvaluate.Add(point);
@@ -168,6 +170,8 @@ public class WorldSimulation
             if (nextCell.HasPlant || nextCell.HasAnimal)
             {
                 nextWorld[point] = nextCell;
+                _plantCount += nextCell.HasPlant ? 1 : 0;
+                _animalCount += nextCell.HasAnimal ? 1 : 0;
             }
         }
     }
