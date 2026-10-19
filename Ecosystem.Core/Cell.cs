@@ -44,4 +44,28 @@ public struct CellData
         
         return nextCellState;
     }
+    
+    public static (int plantCount, int animalCount) CountNeighbours(Point p, Dictionary<Point, CellData> currentWorld)
+    {
+        int plantCount = 0;
+        int animalCount = 0;
+
+        for (int dx = -1; dx <= 1; dx++)
+        {
+            for (int dy = -1; dy <= 1; dy++)
+            {
+                if (dx == 0 && dy == 0) continue;
+
+                Point neighbourPoint = new Point(p.X + dx, p.Y + dy);
+
+                if (currentWorld.TryGetValue(neighbourPoint, out CellData neighbourData))
+                {
+                    if (neighbourData.HasPlant) plantCount++;
+                    if (neighbourData.HasAnimal) animalCount++;
+                }
+            }
+        }
+
+        return (plantCount, animalCount);
+    }
 }

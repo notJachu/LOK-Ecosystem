@@ -11,7 +11,7 @@ public readonly struct Point : IEquatable<Point>
         Y = y;
     }
     
-    public void AddNeighborsTo(HashSet<Point> candidateSet, int boardWidth, int boardHeight)
+    public void AddNeighboursTo(HashSet<Point> candidateSet, int boardWidth, int boardHeight)
     {
         for (int dx = -1; dx <= 1; dx++)
         {
